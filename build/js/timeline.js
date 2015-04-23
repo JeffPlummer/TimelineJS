@@ -5400,6 +5400,7 @@ if(typeof VMM != 'undefined' && typeof VMM.Slider == 'undefined') {
 		================================================== */
 		function upDate() {
 			config.current_slide = current_slide;
+			VMM.Timeline.Config.currentDateData = data[current_slide];
 			VMM.fireEvent(layout, "UPDATE");
 		};
 		
@@ -5759,6 +5760,7 @@ if(typeof VMM != 'undefined' && typeof VMM.Slider == 'undefined') {
 			}
 			
 			if (firstrun) {
+				VMM.Timeline.Config.currentDateData = data[current_slide];
 				VMM.fireEvent(layout, "LOADED");
 			}
 			
@@ -7855,6 +7857,7 @@ if(typeof VMM.Timeline != 'undefined' && typeof VMM.Timeline.TimeNav == 'undefin
 		};
 		
 		function upDate() {
+			VMM.Timeline.Config.currentDateData = data[current_marker];
 			VMM.fireEvent(layout, "UPDATE");
 		}
 		
@@ -8995,6 +8998,7 @@ if(typeof VMM.Timeline != 'undefined' && typeof VMM.Timeline.TimeNav == 'undefin
 			_active = true;
 			
 			reSize(true);
+			VMM.Timeline.Config.currentDateData = data[current_marker];
 			VMM.fireEvent(layout, "LOADED");
 			
 		};
